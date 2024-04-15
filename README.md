@@ -1,1 +1,1 @@
-# stray-dynamic-thumbnail
+# Dynamic Thumbnail
