@@ -1,3 +1,4 @@
+uniform float uTime;
 uniform sampler2D uTexture;
 
 varying vec2 vUv;
@@ -7,5 +8,4 @@ void main() {
     vec2 newUv = vUv;
 
     gl_FragColor = color;
-
 }

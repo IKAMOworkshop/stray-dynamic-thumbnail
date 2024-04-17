@@ -1,3 +1,5 @@
+uniform float uTime;
+
 varying vec2 vUv;
 
 float PI = 3.14159265359;
@@ -15,8 +17,10 @@ void main(){
 
     gl_Position = projectionPosition;
 
-    newUV *= vec2(1.0, .9);
-    newUV += vec2(0.0, .05);
+    newUV *= vec2(.45, .9);
+    newUV += vec2(0.25, .05);
+
+    newUV.x += modelPosition.x * .06;
 
     vUv = newUV;
 }

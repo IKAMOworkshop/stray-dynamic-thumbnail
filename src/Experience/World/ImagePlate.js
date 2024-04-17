@@ -42,8 +42,8 @@ export default class ImagePlate {
             vertexShader: plateVertex,
             fragmentShader: plateFragment,
             uniforms: {
-                uTime: new THREE.Uniform(this.time.elapsed),
-                uTexture: new THREE.Uniform(this.thumbnailTextures[3])
+                uTime: new THREE.Uniform(0),
+                uTexture: new THREE.Uniform(this.thumbnailTextures[1])
             }
         })
         this.mesh = new THREE.Mesh(this.geometry, this.material)
@@ -58,6 +58,7 @@ export default class ImagePlate {
 
     update(){
         this.group.rotation.y = this.group.rotation.y + ((this.cursor.cursorX / this.sizes.width - .5) - this.group.rotation.y) * .01
-    
+        
+        this.material.uniforms.uTime.value = this.time.elapsed * .01
     }
 }
