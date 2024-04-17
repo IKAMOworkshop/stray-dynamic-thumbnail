@@ -17,8 +17,8 @@ void main(){
 
     gl_Position = projectionPosition;
 
-    newUV *= vec2(.45, .9);
-    newUV += vec2(0.25, .05);
+    newUV *= vec2(.4, .9);
+    newUV += vec2(0.3, .05);
 
     newUV.x += modelPosition.x * .06;
 
