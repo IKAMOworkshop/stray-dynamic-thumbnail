@@ -6,7 +6,7 @@ export default class Floor{
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
-        this.scene.fog = new THREE.Fog( 0x232e40, 1, 40)
+        this.scene.fog = new THREE.Fog( 0x0e131c, 1, 40)
 
         this.setGeometry()
         this.setMaterial()
@@ -21,7 +21,7 @@ export default class Floor{
         this.material = new THREE.MeshStandardMaterial({
             color: 0x415575,
             metalness: .5,
-            smoothness: .5
+            roughness: .5
         })
     }
 

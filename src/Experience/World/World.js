@@ -1,7 +1,7 @@
-import Experience from "../Experience";
+import Experience from "../Experience.js";
 import Floor from "./Floor.js"
-import Environment from "./Environment";
-import Robot from "./Robot";
+import Environment from "./Environment.js";
+import ImagePlate from "./ImagePlate.js";
 
 export default class World{
     constructor(){
@@ -11,15 +11,15 @@ export default class World{
 
         this.resources.on('ready', () => {
             // Setup
-            this.robot = new Robot();
+            this.imagePlate = new ImagePlate();
             this.floor = new Floor();
             this.environment = new Environment();
         })
     }
 
     update(){
-        if(this.robot){
-            this.robot.update();
+        if(this.imagePlate){
+            this.imagePlate.update();
         }
     };
 }
