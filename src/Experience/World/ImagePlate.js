@@ -14,9 +14,11 @@ export default class ImagePlate {
         this.debug = this.experience.debug
         this.sizes = this.experience.sizes
         this.cursor = this.experience.cursor
+        this.index = this.experience.thumbnailIndex
 
         this.setTexture()
         this.setModel()
+        this.setHover()
         this.update()
     }
 
@@ -43,8 +45,9 @@ export default class ImagePlate {
             fragmentShader: plateFragment,
             uniforms: {
                 uTime: new THREE.Uniform(0),
-                uTexture: new THREE.Uniform(this.thumbnailTextures[1])
-            }
+                uTexture: new THREE.Uniform(this.thumbnailTextures[this.index])
+            },
+            transparent: true,
         })
         this.mesh = new THREE.Mesh(this.geometry, this.material)
 
@@ -56,9 +59,58 @@ export default class ImagePlate {
         this.scene.add(this.group)
     }
 
+    setHover() {
+        const lift42 = document.getElementById('lift-42')
+        lift42.addEventListener('mouseover', () => {
+            this.index = 0
+        })
+
+        const aida102 = document.getElementById('aida-102')
+        aida102.addEventListener('mouseover', () => {
+            this.index = 1
+        })
+
+        const kyaroru102 = document.getElementById('kyaroru-102')
+        kyaroru102.addEventListener('mouseover', () => {
+            this.index = 2
+        })
+
+        const aida103 = document.getElementById('aida-103')
+        aida103.addEventListener('mouseover', () => {
+            this.index = 3
+        })
+
+        const kyaroru103 = document.getElementById('kyaroru-102')
+        kyaroru103.addEventListener('mouseover', () => {
+            this.index = 4
+        })
+
+        const kyaroru40 = document.getElementById('kyaroru-40')
+        kyaroru40.addEventListener('mouseover', () => {
+            this.index = 5
+        })
+
+        const lift41 = document.getElementById('lift-41')
+        lift41.addEventListener('mouseover', () => {
+            this.index = 6
+        })
+
+        const prisma = document.getElementById('prisma')
+        prisma.addEventListener('mouseover', () => {
+            this.index = 7
+        })
+
+        const polygon = document.getElementById('polygon')
+        polygon.addEventListener('mouseover', () => {
+            this.index = 8
+        })
+    }
+
     update(){
         this.group.rotation.y = this.group.rotation.y + ((this.cursor.cursorX / this.sizes.width - .5) - this.group.rotation.y) * .01
         
         this.material.uniforms.uTime.value = this.time.elapsed * .01
+
+        this.material.uniforms.uTexture.value = this.thumbnailTextures[this.index]
     }
 }

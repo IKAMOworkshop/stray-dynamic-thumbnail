@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700;900&display=swap");
+* {
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: rgb(11, 13, 16);
+  background: url(/background.png) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  height: 100vh;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+  cursor: default;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  display: inline-block;
+}
+
+#webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+  z-index: -1;
+}
+
+.hover-button {
+  border-bottom: solid 0.1px rgb(106, 115, 128);
+}
+
+.button-container {
+  position: absolute;
+  top: 10%;
+  padding: 0px 16px 16px 16px;
+}
+
+.title-container {
+  position: absolute;
+  padding: 16px;
+  width: 100vw;
+}
+
+.text-border {
+  flex: 1;
+  padding: 8px 0px 8px 0px;
+  width: 220px;
+}
+
+.scroll-stopper {
+  overflow-x: hidden;
+}
+
+.text-light {
+  color: rgb(255, 255, 255);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 150%;
+}
+
+.caption-bold {
+  font-weight: 600;
+  font-size: 0.8rem;
+  line-height: 150%;
+}
+
+.caption-light {
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 150%;
+}/*# sourceMappingURL=style.css.map */
